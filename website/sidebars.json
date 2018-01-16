@@ -1,0 +1,46 @@
+{
+  "docs": {
+    "Get Started": ["getting-started"],
+    "Recipes": [
+      "recipe-automate-release-workflow",
+      "recipe-browserify-multiple-destination",
+      "recipe-browserify-transforms",
+      "recipe-browserify-uglify-sourcemap",
+      "recipe-browserify-with-globs",
+      "recipe-combining-streams-to-handle-errors",
+      "recipe-cron-task",
+      "recipe-delete-files-folder",
+      "recipe-exports-as-tasks",
+      "recipe-fast-browserify-builds-with-watchify",
+      "recipe-handling-the-delete-event-on-watch",
+      "recipe-incremental-builds-with-concatenate",
+      "recipe-maintain-directory-structure-while-globbing",
+      "recipe-make-stream-from-buffer",
+      "recipe-minified-and-non-minified",
+      "recipe-minimal-browsersync-setup-with-gulp4",
+      "recipe-mocha-test-runner-with-gulp",
+      "recipe-only-pass-through-changed-files",
+      "recipe-pass-arguments-from-cli",
+      "recipe-rebuild-only-files-that-change",
+      "recipe-rollup-with-rollup-stream",
+      "recipe-run-grunt-tasks-from-gulp",
+      "recipe-running-shell-commands",
+      "recipe-running-task-steps-per-folder",
+      "recipe-running-tasks-in-series",
+      "recipe-server-with-livereload-and-css-injection",
+      "recipe-sharing-streams-with-stream-factories",
+      "recipe-specifying-a-cwd",
+      "recipe-split-tasks-across-multiple-files",
+      "recipe-templating-with-swig-and-yaml-front-matter",
+      "recipe-using-external-config-file",
+      "recipe-using-multiple-sources-in-one-task"
+    ],
+    "Why use Pump": ["why-use-pump"],
+    "Writing a Plugin": [
+      "why-use-pump"
+    ]
+  },
+  "docs-other": {
+    "First Category": ["doc4", "doc5"]
+  }
+}
