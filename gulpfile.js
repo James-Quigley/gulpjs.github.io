@@ -8,6 +8,7 @@ const pump = require('pump');
 const through2 = require('through2');
 const frontMatter = require('gray-matter');
 const download = require('github-download-directory');
+const flatten = require('gulp-flatten');
 
 // Exports for task registration
 exports.default = series(fetchDocs, convertComments);
@@ -29,6 +30,7 @@ function convertComments(cb) {
     // Only process markdown files in the directory we fetched
     src('**/*.md', { cwd: directory }),
     pluginless(convertFrontMatter),
+    flatten(),
     // Overwrite the markdown files we fetched
     dest(directory)
   ], cb)

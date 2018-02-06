@@ -23,9 +23,9 @@ const siteConfig = {
   projectName: 'GulpJS Docs',
   headerLinks: [
     {doc: 'getting-started', label: 'Get Started'},
-    {doc: 'API', label: 'API'},
-    {doc: 'FAQ', label: 'FAQ'},
-    {doc: 'CLI', label: 'CLI'},
+    {doc: 'api', label: 'API'},
+    {doc: 'faq', label: 'FAQ'},
+    {doc: 'cli', label: 'CLI'},
   ],
   users,
   /* path to images for header/footer */
