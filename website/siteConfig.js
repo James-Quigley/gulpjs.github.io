@@ -21,6 +21,7 @@ const siteConfig = {
   url: 'https://gulpjs.github.io/docs' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   projectName: 'GulpJS Docs',
+  customDocsPath: 'converted-docs',
   headerLinks: [
     {doc: 'getting-started', label: 'Get Started'},
     {doc: 'api', label: 'API'},
@@ -51,6 +52,33 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/gulpjs/gulp',
+  markdownPlugins: [
+    commentOutHeading
+  ]
 };
 
 module.exports = siteConfig;
+
+/* Utils */
+function commentOutHeading(md) {
+  var ogHeadingOpen = md.renderer.rules.heading_open;
+  var ogHeadingClose = md.renderer.rules.heading_close;
+
+  var waitingForClose = false;
+
+  md.renderer.rules.heading_open = function(tokens, idx /*, options, env */) {
+    if (tokens[idx].hLevel === 1 && idx === 0) {
+      waitingForClose = true;
+      return '<!-- ';
+    }
+    return ogHeadingOpen.apply(this, arguments);
+  };
+
+  md.renderer.rules.heading_close = function(tokens, idx /*, options, env */) {
+    if (tokens[idx].hLevel === 1 && waitingForClose) {
+      waitingForClose = false;
+      return ' -->';
+    }
+    return ogHeadingClose.apply(this, arguments);
+  };
+}
